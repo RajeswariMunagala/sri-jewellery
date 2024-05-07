@@ -14,6 +14,55 @@
   <meta name="author" content="" />
 
   <title>Sri Jewellery</title>
+  <style>
+    /* Style for the container */
+    #promotion-container {
+        width: 100%;
+        height: 200px; /* Adjust height as needed */
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* Style for individual promotions */
+    .promotion {
+        position: absolute;
+        bottom: 0;
+        left: 100%; /* Initially hides the promotion outside the container */
+        width: 100%;
+        min-width: 350px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f2f2f2;
+        transition: left 0.9s ease-in-out;
+    }
+
+    /* Style for the image */
+    .promotion img {
+        max-width: 50%;
+        height: auto;
+    }
+
+    /* Style for the text information */
+    .promotion .text {
+        max-width: 50%;
+        padding: 10px;
+        padding-left: 85px;
+    }
+
+    /* Animation to slide the promotions */
+    .move {
+        left: 0;
+    }
+    .imgsize{
+        
+        min-width: 80px;
+        min-height:60px ;
+
+    }
+   
+</style>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -27,6 +76,67 @@
 </head>
 
 <body>
+  <div id="promotion-container">
+    
+    <a href="https://addtheadd.com"> <div class="promotion">
+        <p> Ads </p>
+        <div class="image">
+            <img class="imgsize" src="images/add1.jpg" alt="Promotion 1">
+        </div>
+        <div class="text">
+            
+            <p>addtheadd.com website information</p>
+        </div>
+    </div></a>
+
+    <a href="https://bvsadd.netlify.app"><div class="promotion">
+        <p> Ads </p>
+        <div class="image">
+            <img class="imgsize" src="images/bvsads1.jpg" alt="Promotion 2">
+        </div>
+        <div class="text">
+            <p>Business Victory Solutions information</p>
+        </div>
+    </div></a>
+   
+    <a href="https://chavera.netlify.app"><div class="promotion">
+        <p> Ads </p>
+        <div class="image">
+            <img class="imgsize" src="images/chavera.jpg" alt="Promotion 3">
+        </div>
+        <div class="text">
+            <p>chavera </p>
+        </div>
+    </div></a>
+
+    <a href="https://bvsadd.netlify.app"><div class="promotion">
+        <p> Ads </p>
+        <div class="image">
+            <img class="imgsize" src="images/bvsads2.jpg" alt="Promotion 4">
+        </div>
+        <div class="text">
+            <p>Promotion 2 Text Information</p>
+        </div>
+    </div></a>
+</div>
+
+<script>
+    // JavaScript to rotate promotions every 5 seconds
+    document.addEventListener('DOMContentLoaded', function () {
+        var promotions = document.querySelectorAll('.promotion');
+        var index = 0;
+
+        function rotatePromotion() {
+            promotions[index].classList.remove('move');
+            index = (index + 1) % promotions.length;
+            promotions[index].classList.add('move');
+        }
+
+        rotatePromotion(); // Initially display the first promotion
+
+        setInterval(rotatePromotion, 10000); // Rotate promotion every 5 seconds
+    });
+</script>
 
   <!-- header section strats -->
   <header class="header_section">
@@ -34,7 +144,7 @@
       <nav class="navbar navbar-expand-lg custom_nav-container">
         <a class="navbar-brand" href="index.html">
           <span>
-            పొన్నూరు మల్లి
+           <font color="black"> పొన్నూరు మల్లి</font>
           </span>
         </a>
         <div class="" id="">
@@ -674,7 +784,7 @@
   <script src="js/bootstrap.js"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
-
+  
 </body>
 
 </html>
